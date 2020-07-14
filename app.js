@@ -20,11 +20,21 @@ function timer(){
         sec=0;
     }
 }
+function disableBtn(){
+    var btn= document.getElementById("start");
+    btn.disabled= true
+}
 function start(){
     interval= setInterval(timer,10)
+    disableBtn()
+}
+function enableBtn(){
+    var btn= document.getElementById("start");
+    btn.disabled= false
 }
 function pause(){
     clearInterval(interval)
+    enableBtn()
 }
 function reset(){
     var min = 0;
